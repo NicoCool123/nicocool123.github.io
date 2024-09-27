@@ -4,7 +4,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
     buttons.forEach(button => {
         button.addEventListener('click', () => {
-            alert('Mehr Informationen bald verfügbar!');
+            const action = button.getAttribute('data-action');
+
+            switch (action) {
+                case 'server-overview':
+                    alert('Hier siehst du eine Übersicht über deine Server.');
+                    break;
+                case 'bot-settings':
+                    alert('Hier kannst du die Einstellungen deines Bots anpassen.');
+                    break;
+                case 'mini-games':
+                    alert('Hier sind die verfügbaren Minispiele des Bots.');
+                    break;
+                default:
+                    alert('Mehr Informationen bald verfügbar!');
+            }
         });
     });
 });
